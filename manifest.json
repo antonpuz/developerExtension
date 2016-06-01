@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "Makes you work",
+    "version": "0.1",
+     
+    "background": {
+        "scripts": ["background.js"]
+    },
+     
+    "content_scripts": [
+    {
+        "matches": [
+            "http://www.ynet.co.il/*",
+            "https://www.facebook.com/*",
+            "http://www.walla.co.il/*",
+            "http://www.yad2.co.il/*"
+        ],
+        "js": ["jquery-2.2.4.min.js", "content.js"],
+        "all_frames": true,
+        "run_at" : "document_start"
+    }
+    ],
+    
+    "browser_action": {
+        "default_icon": "labor.png",
+        "default_popup": "popup.html"
+    },
+    
+    "permissions": [
+        "tabs", "http://*/*", "https://*/*"
+    ]
+}
